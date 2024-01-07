@@ -1,8 +1,10 @@
 package com.example.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
@@ -26,8 +28,12 @@ public class User {
     private LocalDateTime createdAt;
 
     @Lob
-    @Column(columnDefinition="mediumblob")
+    @Column(columnDefinition = "mediumblob")
     private byte[] profilePhoto;
+
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "user")
+    @JsonManagedReference
+    private List<Post> posts;
 
     public User() {
         this.createdAt = LocalDateTime.now();
@@ -83,5 +89,9 @@ public class User {
 
     public void setProfilePhoto(byte[] profilePhoto) {
         this.profilePhoto = profilePhoto;
+    }
+
+    public void addPost(Post post) {
+        posts.add(post);
     }
 }

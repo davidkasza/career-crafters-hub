@@ -1,7 +1,9 @@
 package com.example.services;
 
+import com.example.dtos.PostDTO;
 import com.example.dtos.RegisteredUserDTO;
 import com.example.dtos.UserDTO;
+import com.example.entities.Post;
 import com.example.entities.User;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +30,9 @@ public class MapperServiceImpl implements MapperService {
 
     public RegisteredUserDTO convertUserToRegisteredUserDTO(User user) {
         return modelMapper.map(user, RegisteredUserDTO.class);
+    }
+
+    public Post convertPostDTOToPost(PostDTO postDTO) {
+        return modelMapper.map(postDTO, Post.class);
     }
 }
