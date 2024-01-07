@@ -2,6 +2,8 @@ package com.example.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
 public class User {
@@ -20,6 +22,16 @@ public class User {
     private boolean verified;
 
     private String verificationToken;
+
+    private LocalDateTime createdAt;
+
+    @Lob
+    @Column(columnDefinition="mediumblob")
+    private byte[] profilePhoto;
+
+    public User() {
+        this.createdAt = LocalDateTime.now();
+    }
 
     public String getUsername() {
         return username;
@@ -63,5 +75,13 @@ public class User {
 
     public void setVerificationToken(String verificationToken) {
         this.verificationToken = verificationToken;
+    }
+
+    public byte[] getProfilePhoto() {
+        return profilePhoto;
+    }
+
+    public void setProfilePhoto(byte[] profilePhoto) {
+        this.profilePhoto = profilePhoto;
     }
 }

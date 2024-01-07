@@ -31,4 +31,14 @@ public class GlobalExceptionHandler extends ExceptionHandlerExceptionResolver {
     public ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException exception) {
         return new ResponseEntity<>(new ErrorDTO("error", exception.getMessage()), HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(value = ProfilePhotoException.class)
+    public ResponseEntity<Object> handleProfilePhotoException(UserNotFoundException exception) {
+        return new ResponseEntity<>(new ErrorDTO("error", exception.getMessage()), HttpStatus.NOT_ACCEPTABLE);
+    }
+
+    @ExceptionHandler(value = DefaultPhotoException.class)
+    public ResponseEntity<Object> handleDefaultPhotoException(DefaultPhotoException exception) {
+        return new ResponseEntity<>(new ErrorDTO("error", exception.getMessage()), HttpStatus.NOT_FOUND);
+    }
 }
