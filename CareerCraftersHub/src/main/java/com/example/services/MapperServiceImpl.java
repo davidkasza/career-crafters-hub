@@ -1,8 +1,10 @@
 package com.example.services;
 
+import com.example.dtos.CommentDTO;
 import com.example.dtos.PostDTO;
 import com.example.dtos.RegisteredUserDTO;
 import com.example.dtos.UserDTO;
+import com.example.entities.Comment;
 import com.example.entities.Post;
 import com.example.entities.User;
 import org.modelmapper.ModelMapper;
@@ -34,5 +36,9 @@ public class MapperServiceImpl implements MapperService {
 
     public Post convertPostDTOToPost(PostDTO postDTO) {
         return modelMapper.map(postDTO, Post.class);
+    }
+
+    public Comment convertCommentDTOToComment(CommentDTO commentDTO) {
+        return modelMapper.map(commentDTO, Comment.class);
     }
 }

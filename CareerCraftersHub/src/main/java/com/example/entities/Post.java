@@ -1,9 +1,11 @@
 package com.example.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "posts")
@@ -21,6 +23,10 @@ public class Post {
     @ManyToOne(cascade = {CascadeType.PERSIST})
     @JsonBackReference
     private User user;
+
+    @OneToMany(cascade = {CascadeType.PERSIST})
+    @JsonManagedReference
+    private List<Comment> comments;
 
     public String getText() {
         return text;
@@ -52,5 +58,9 @@ public class Post {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public void addComment(Comment comment) {
+        comments.add(comment);
     }
 }

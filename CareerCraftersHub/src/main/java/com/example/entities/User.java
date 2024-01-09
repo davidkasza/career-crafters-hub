@@ -35,6 +35,10 @@ public class User {
     @JsonManagedReference
     private List<Post> posts;
 
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "user")
+    @JsonManagedReference
+    private List<Comment> comments;
+
     public User() {
         this.createdAt = LocalDateTime.now();
     }
@@ -93,5 +97,9 @@ public class User {
 
     public void addPost(Post post) {
         posts.add(post);
+    }
+
+    public void addComment(Comment comment) {
+        comments.add(comment);
     }
 }
