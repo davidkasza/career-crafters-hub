@@ -6,13 +6,14 @@ import com.example.dtos.UserDTO;
 import com.example.services.GeneralUtility;
 import com.example.services.UserService;
 import com.example.verification.EmailService;
-import jakarta.mail.MessagingException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.mail.MessagingException;
 
 @RestController
 @RequestMapping("/api")

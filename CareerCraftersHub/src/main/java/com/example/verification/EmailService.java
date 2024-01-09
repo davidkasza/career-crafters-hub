@@ -3,11 +3,11 @@ package com.example.verification;
 import com.example.configurations.ApplicationConfiguration;
 import com.example.dtos.UserDTO;
 import com.example.services.UserService;
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.MimeMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
 import java.util.Random;
 
 @Service

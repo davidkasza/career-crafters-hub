@@ -5,12 +5,12 @@ import com.example.exceptions.DefaultPhotoException;
 import com.example.exceptions.ProfilePhotoException;
 import com.example.repositories.UserRepository;
 import com.example.security.CareerCraftersHubUserDetailsService;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.nio.file.Files;
 

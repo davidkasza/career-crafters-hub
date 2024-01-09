@@ -49,7 +49,7 @@ public class SecurityConfiguration {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests(authorize -> authorize
-                        .requestMatchers("/", "/api/login", "/api/registration", "/api/verify-email").permitAll()
+                        .antMatchers("/", "/api/login", "/api/registration", "/api/verify-email").permitAll()
                         .anyRequest().authenticated())
                 .exceptionHandling(exception -> exception
                         .authenticationEntryPoint(authenticationEntryPoint()))

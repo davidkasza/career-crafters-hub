@@ -1,16 +1,15 @@
 package com.example.security;
 
 import com.example.entities.User;
-
 import com.example.exceptions.InvalidTokenException;
 import com.example.exceptions.UserNotFoundException;
 import com.example.repositories.UserRepository;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 @Service

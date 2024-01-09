@@ -7,8 +7,9 @@ import com.example.entities.User;
 import com.example.repositories.CommentRepository;
 import com.example.repositories.PostRepository;
 import com.example.security.CareerCraftersHubUserDetailsService;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Service
 public class CommentServiceImpl implements CommentService {

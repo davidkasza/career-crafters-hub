@@ -3,7 +3,6 @@ package com.example.exceptions.handlers;
 import com.example.dtos.ErrorDTO;
 import com.example.exceptions.*;
 import com.example.exceptions.InvalidTokenException;
-import com.example.exceptions.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

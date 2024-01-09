@@ -4,10 +4,11 @@ import com.example.dtos.CommentDTO;
 import com.example.dtos.ErrorDTO;
 import com.example.services.CommentService;
 import com.example.services.GeneralUtility;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/api")

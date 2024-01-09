@@ -4,8 +4,9 @@ import com.example.dtos.PostDTO;
 import com.example.entities.Post;
 import com.example.repositories.PostRepository;
 import com.example.security.CareerCraftersHubUserDetailsService;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Service
 public class PostServiceImpl implements PostService {
