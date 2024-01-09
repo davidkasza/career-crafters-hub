@@ -7,7 +7,7 @@ plugins {
 }
 
 
-group = 'com.redbay'
+group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -15,7 +15,6 @@ repositories {
     mavenCentral()
 }
 
-//Checkstyle
 checkstyle {
     toolVersion "8.32"
     configFile file("config/checkstyle/checkstyle.xml")
